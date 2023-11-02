@@ -1,0 +1,17 @@
+africa
+dz","ao","bj","bw","bf","bi","cm","cv","cf","td","km","cd","cg","dj","eg","gq","er","et","ga","gm","gh","gn","gw","ci","ke","ls","lr","ly","mg","mw","ml","mr","mu","yt","ma","mz","na","ne","ng","re","rw","sh","st","sn","sc","sl","so","za","ss","sd","sz","tz","tg","tn","ug","zm","zw
+
+asia
+af","am","az","bh","bd","bt","bn","kh","cn","cy","tl","ge","hk","in","id","ir","iq","il","jp","jo","kz","kw","kg","la","lb","mo","my","mv","mn","mm","np","kp","kr","om","pk","ps","ph","qa","sa","sg","lk","sy","tw","tj","th","tr","tm","ae","uz","vn","ye
+
+europe
+al","ad","at","by","be","ba","bg","hr","cz","dk","ee","fi","fr","de","gr","gi","hu","is","ie","it","lv","li","lt","lu","mk","mt","md","mc","me","nl","no","pl","pt","ro","ru","sm","rs","sk","si","es","se","ch","ua","gb","va
+
+north america
+ai","ag","aw","bs","bb","bz","bm","bq","vg","ca","ky","cr","cu","cw","dm","do","sv","gl","gd","gp","gt","ht","hn","jm","mq","mx","ms","ni","pa","pr","bl","kn","lc","mf","pm","vc","sx","tt","tc","us","vi
+
+south america
+ar","bo","br","cl","co","ec","fk","gf","gy","py","pe","gs","sr","uy","ve
+
+Oceani
+as","au","ck","fj","pf","gu","ki","mh","fm","nr","nc","nz","nu","nf","mp","pw","pg","pn","ws","sb","tk","to","tv","vu","wf

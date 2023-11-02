@@ -1,0 +1,137 @@
+#headline 
+{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2vmin;
+}
+
+#settings 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vmin;
+}
+#settings a 
+{
+    text-decoration: none;
+    border: 2px solid black;
+    padding:3px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5vmin;
+    border-spacing: 0px;
+    margin-left:-2px;
+    margin-right:0px;
+}
+#settings a:link, a:visited 
+{
+    color:black;
+}
+#settings a:hover 
+{
+    background-color: black;
+    color:white;
+}
+#settings a:active 
+{
+    color:#ce0000;
+}
+.selected 
+{
+    background-color: #9a9a9a;
+}
+
+#left {
+    width:33%;
+    float:left;
+}
+#right {
+    text-align: right;
+    width:33%;
+    float:right;
+}
+#lowerLabel {
+    text-align: center;
+}
+.circle
+{
+   /*opacity:0;*/
+   fill:#b9b9b9;
+   fill-opacity:1;
+   stroke:black;
+   stroke-width:0.5;
+   stroke-miterlimit:3.97446823;
+   stroke-dasharray:none;
+   stroke-opacity:1;
+}
+
+.land
+{
+   fill: #b9b9b9;
+   fill-opacity: 1;
+   stroke:white;
+   stroke-opacity: 1;
+   stroke-width:0.5;
+   stroke-miterlimit: 3.97446823;
+   stroke-dasharray: none;
+}
+
+/*
+ * Styles for coastlines of islands with no borders
+ */
+.coast
+{
+   stroke-width: 0.3;
+}
+
+.ocean
+{
+   opacity: 1;
+   color: #000000;
+   fill:white;
+   fill-opacity:1;
+   fill-rule:nonzero;
+   marker:none;
+   marker-start:none;
+   marker-mid:none;
+   marker-end:none;
+   stroke-miterlimit:1;
+   stroke-dasharray:none;
+   stroke-dashoffset:0;
+   stroke-opacity:1;
+   visibility:visible;
+   display:inline;
+   overflow:visible;
+}
+
+.lake
+{
+   fill:white;
+   fill-opacity:1;
+   stroke:white;
+   stroke-opacity: 1;
+   stroke-width:0.3;
+   stroke-miterlimit: 3.97446823;
+   stroke-dasharray: none;
+}
+
+.mousedown, .mouseover.mousedown 
+{
+    fill:#696969;
+}
+      
+.mouseover 
+{
+    fill:#818181;
+}
+      
+.solved
+{
+    fill:#00ff27;
+}
+
+.nextCountry 
+{
+    opacity: 1.0;
+    fill:#ac1818;
+}
