@@ -359,7 +359,7 @@
 							<h3
 								class="mt-3 text-lg font-semibold leading-6 text-neutral-100 group-hover:text-neutral-300"
 							>
-								<a href={post.url}>
+								<a href='/old-code{post.url}'>
 									<span class="absolute inset-0" />
 									{post.title}
 								</a>
