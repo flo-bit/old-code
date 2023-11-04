@@ -55,7 +55,7 @@
 			description:
 				'Using noise to move particles around the screen. Inspired by Daniel Shiffman. Press ? for available commands.',
 			image: flowfield,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/flowfield/'
 		},
 		{
@@ -76,7 +76,7 @@
 			title: '3D flowfield',
 			description: 'A b/w 3D version of a flowfield.',
 			image: flowfield3d,
-			tags: ['p5', '3D', 'art'],
+			tags: ['three.js', '3D', 'art', 'flowfield'],
 			url: '/3d-flowfield/'
 		},
 		{
@@ -97,7 +97,7 @@
 			title: 'Static Flowfield',
 			description: 'A static version of my flowfield.',
 			image: staticflowfield,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/static-flowfield/'
 		},
 		{
@@ -140,7 +140,7 @@
 			description:
 				'A simple 2D light ray simulation. Supposed to be used for a zombie or escape game. Click to add light source. Move using WASD, move mouse to look around.',
 			image: lightrays2d,
-			tags: ['p5', 'game'],
+			tags: ['p5', 'algorithm'],
 			url: '/2d-light-rays/'
 		},
 		{
@@ -170,7 +170,7 @@
 			description:
 				'A simple and clean local multiplayer chess game. Best played on a tablet that you put between you and your opponent.',
 			image: chess,
-			tags: ['p5', 'game'],
+			tags: ['p5', 'game', 'multiplayer'],
 			url: '/simple-chess/'
 		},
 		{
@@ -205,35 +205,35 @@
 			title: 'Flow Stairs',
 			description: 'A flowfield with stairs.',
 			image: flowstairs,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/flow-stairs/'
 		},
 		{
 			title: 'Flowfield Colors',
 			description: 'A flowfield with colors.',
 			image: flowfieldcolors,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/flowfield-colors/'
 		},
 		{
 			title: 'Flowfield Fishes',
 			description: 'A flowfield with fishes.',
 			image: flowfieldfishes,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/flowfield-fishes/'
 		},
 		{
 			title: 'Flowfield Matrix',
 			description: 'A flowfield with a matrix style.',
 			image: flowfieldmatrix,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'flowfield'],
 			url: '/flowfield-matrix/'
 		},
 		{
 			title: 'L-System Plants',
 			description: 'Plants generated using L-Systems.',
 			image: lsystemplants,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'algorithm'],
 			url: '/l-system-plants/'
 		},
 		{
@@ -247,7 +247,7 @@
 			title: 'n-D Rendering',
 			description: 'Rendering a n-D scene in 2D. Press + and - to change the dimension.',
 			image: ndrendering,
-			tags: ['p5', 'art'],
+			tags: ['p5', 'art', 'algorithm'],
 			url: '/nd-rendering/'
 		},
 		{
@@ -325,25 +325,62 @@
 			title: 'Silly Jumper',
 			description: 'A silly jumper game. Includes local multiplayer. Pretty hard.',
 			image: sillyjumper,
-			tags: ['p5', 'game'],
+			tags: ['p5', 'game', 'multiplayer'],
 			url: '/silly-jumper/'
 		}
 	];
+
+	$: tags = content.reduce((acc, curr) => {
+		curr.tags.forEach((tag) => {
+			if (!acc.includes(tag)) {
+				acc.push(tag);
+			}
+		});
+		return acc;
+	}, []);
+
+	let activeTags = [];
+
+	$: filteredContent = content.filter((post) => {
+		if (activeTags.length === 0) {
+			return true;
+		}
+		return post.tags.some((tag) => activeTags.includes(tag));
+	});
 </script>
 
+<div class="bg-amber-500"></div>
 <div class=" py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Old projects</h2>
 			<p class="mt-2 text-lg leading-8 text-neutral-300">
-				Here are some of my old coding projects. Mostly written in p5.js and focusing on creative
-				art, emergence or small games.
+				Check out some of my old coding projects. Mostly written in p5.js and focusing on
+				algorithmic art, emergence or small games.
 			</p>
+			<div class="flex space-x-2 justify-center mt-8">
+				{#each tags as tag}
+					<button
+						on:click={() => {
+							if (activeTags.includes(tag)) {
+								activeTags = activeTags.filter((t) => t !== tag);
+							} else {
+								activeTags = [...activeTags, tag];
+							}
+						}}
+						class={`relative z-10 rounded-full px-3 py-1.5 font-medium text-neutral-200 ${activeTags.includes(tag)
+							? 'bg-amber-700'
+							: 'bg-neutral-800'}`}
+					>
+						{tag}
+					</button>
+				{/each}
+			</div>
 		</div>
 		<div
 			class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
 		>
-			{#each content as post}
+			{#each filteredContent as post}
 				<article class="flex flex-col items-start justify-between">
 					<div class="relative w-full">
 						<img
@@ -357,18 +394,25 @@
 						<div class="mt-8 flex items-center gap-x-4 text-xs">
 							<!--<time datetime={post.date} class="text-gray-500">{post.date}</time>-->
 							{#each post.tags as tag}
-								<div
+								<button
+									on:click={() => {
+										if (activeTags.includes(tag)) {
+											activeTags = activeTags.filter((t) => t !== tag);
+										} else {
+											activeTags = [...activeTags, tag];
+										}
+									}}
 									class="relative z-10 rounded-full bg-neutral-800 px-3 py-1.5 font-medium text-neutral-200"
 								>
 									{tag}
-								</div>
+						</button>
 							{/each}
 						</div>
 						<div class="group relative">
 							<h3
 								class="mt-3 text-lg font-semibold leading-6 text-neutral-100 group-hover:text-neutral-300"
 							>
-								<a href='/old-code{post.url}'>
+								<a href="/old-code{post.url}">
 									<span class="absolute inset-0" />
 									{post.title}
 								</a>
