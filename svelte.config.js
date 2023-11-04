@@ -10,6 +10,9 @@ const config = {
 		adapter: adapterStatic(),
 		prerender: {
 			handleHttpError: 'ignore'
+		},
+		paths: {
+			base: '/old-code'
 		}
 	},
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors

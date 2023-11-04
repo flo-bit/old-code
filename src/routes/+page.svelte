@@ -41,6 +41,8 @@
 	import dithering from '$lib/images/dithering.png?w=1000&format=webp';
 	import circlepacking from '$lib/images/circlepacking.png?w=1000&format=webp';
 
+	import sillyjumper from '$lib/images/silly-jumper.png?w=1000&format=webp';
+
 	const content: {
 		title: string;
 		description: string;
@@ -318,6 +320,13 @@
 			image: circlepacking,
 			tags: ['p5', 'art'],
 			url: '/circlepacking/'
+		},
+		{
+			title: 'Silly Jumper',
+			description: 'A silly jumper game. Includes local multiplayer. Pretty hard.',
+			image: sillyjumper,
+			tags: ['p5', 'game'],
+			url: '/silly-jumper/'
 		}
 	];
 </script>
