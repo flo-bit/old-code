@@ -33,6 +33,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
+		"gsap": "^3.12.5",
 		"vite-imagetools": "^6.2.1"
 	}
 }
