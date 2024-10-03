@@ -266,13 +266,13 @@
 			tags: ['p5', 'art'],
 			url: '/line-boxes-styles/'
 		},
-		{
-			title: 'n-D Rendering',
-			description: 'Rendering a n-D scene in 2D. Press + and - to change the dimension.',
-			image: ndrendering,
-			tags: ['p5', 'art', 'algorithm'],
-			url: '/nd-rendering/'
-		},
+		// {
+		// 	title: 'n-D Rendering',
+		// 	description: 'Rendering a n-D scene in 2D. Press + and - to change the dimension.',
+		// 	image: ndrendering,
+		// 	tags: ['p5', 'art', 'algorithm'],
+		// 	url: '/nd-rendering/'
+		// },
 		{
 			title: 'Noise Circle',
 			description: 'A circle and some noise. Move your mouse over it.',
@@ -421,12 +421,12 @@
 	<div class="mx-auto max-w-5xl px-6 lg:px-8">
 		<div class="max-w-2xl">
 			<h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-				Some of my old projects
+				my old projects
 			</h1>
 			<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-				Check out some of my old coding projects. Mostly written in p5.js and focusing on
-				algorithmic art, emergence or small games. Feel free to play around, steal, remix or do
-				whatever you want with the code.
+				check out some of my old coding projects. mostly written in p5.js and focusing on
+				algorithmic art, emergence or small games. feel free to play around, steal, remix or do
+				whatever you want with the code. made by <a target="_blank" class="text-cyan-500 font-semibold hover:text-cyan-300" href="https://flo-bit.dev">flo-bit</a>
 			</p>
 			<p class="mt-6 flex flex-wrap">
 				{#each tags as tag, i}
