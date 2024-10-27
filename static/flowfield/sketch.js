@@ -3,7 +3,7 @@ p5.disableFriendlyErrors = true; // maybe makes it faster?
 /////////
 // changebable in browser
 /////////
-var scl = 0.001; // scale of noisefield, [+/-] to zoom in/out
+var scl = 0.0008; // scale of noisefield, [+/-] to zoom in/out
 
 var moveNoise = true; //[n] is movement in noise space on
 var moveParticles = true; //[space] is particle movement on
@@ -11,7 +11,7 @@ var moveParticles = true; //[space] is particle movement on
 var showInfo = false; // [i] show debug info (fps, )
 var showHelp = false; // [?] show keyboard controls
 
-var particleCount = 4000; // max number of particles
+var particleCount = 5000; // max number of particles
 // [right/left arrow] add/subtract 50
 
 var numberOfSlices = 5; // number of slices in noise space (along z-axis)
@@ -32,15 +32,15 @@ const keySpeed = 0.05; // movement per down key
 // movement per second
 const xSpeed = 0.0008;
 const ySpeed = 0.01;
-const zSpeed = 0.05;
+const zSpeed = 0.03;
 
 const sliceDistance = 0.005; // distance between noise slices
-const maxspeed = 6; // maxspeed of particles, independent of framerate
+const maxspeed = 4; // maxspeed of particles, independent of framerate
 // (so higher framerate will make them go faster)
 
-const hueMultiplier = 500.0; // particles will multiply noise result
+const hueMultiplier = 300.0; // particles will multiply noise result
 // by this to get hue
-const accMultiplier = 8 * Math.PI;
+const accMultiplier = 6 * Math.PI;
 /////////
 
 // position in noise field
@@ -84,6 +84,8 @@ function setup() {
 	textSize(15);
 
 	addParticles(1000);
+
+	frameRate(30);
 }
 
 function draw() {
@@ -216,16 +218,16 @@ function keyPressed() {
 			fullscreen(!fs);
 			break;
 		case 73: // I
-			showInfo = !showInfo;
-			if (!showInfo) {
-				needsReset = 1;
-			}
+			// showInfo = !showInfo;
+			// if (!showInfo) {
+			// 	needsReset = 1;
+			// }
 			break;
 		case 191: // ?
-			showHelp = !showHelp;
-			if (!showHelp) {
-				needsReset = 1;
-			}
+			// showHelp = !showHelp;
+			// if (!showHelp) {
+			// 	needsReset = 1;
+			// }
 			break;
 
 		// turn movement on/off

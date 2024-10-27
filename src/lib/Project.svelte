@@ -47,7 +47,7 @@
 		class="{project.image ? 'mt-6' : ''} text-base font-semibold text-zinc-800 dark:text-zinc-100"
 	>
 		{#if project.url}
-			<a href={'/old-code' + project.url} target="_blank">
+			<a href={'/old-code' + project.url + 'index.html'} target="_blank">
 				<div
 					class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/30 sm:-inset-x-6 sm:rounded-2xl"
 				/>
